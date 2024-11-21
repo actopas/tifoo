@@ -67,6 +67,8 @@ export interface FloatingWindowHeaderProps {
   onCopyClasses: () => void;
   onCopyElement: () => void;
   onDeactivate: () => void;
+  isAIMode: boolean;
+  onAIModeChange: (enabled: boolean) => void;
 }
 
 // Used in: src/components/ClassList.tsx
@@ -116,4 +118,20 @@ export interface StyleGroups {
 // Used in: src/components/icons
 export interface IconProps {
   className?: string;
+}
+
+// Used in: src/components/FloatingWindowHeader.tsx
+export interface AIPromptProps {
+  isAIMode: boolean;
+  onAIModeChange: (enabled: boolean) => void;
+}
+
+// Used in: src/services/api.ts
+export interface ApiRequest {
+  elementCode: string;
+  description: string;
+}
+
+export interface ApiResponse {
+  content: string;
 }
