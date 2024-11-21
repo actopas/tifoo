@@ -1,5 +1,5 @@
 import type { ClassTagProps } from "@/types";
-import { Switch } from "@headlessui/react";
+import Switch from "@/components/Common/Switch";
 import React, { useEffect, useState } from "react";
 
 const ClassTag: React.FC<ClassTagProps> = ({
@@ -23,13 +23,7 @@ const ClassTag: React.FC<ClassTagProps> = ({
   return (
     <div className="bg-gray-50/50 px-2 py-1 rounded-lg text-xs flex items-center justify-beeen shadow-sm transition-all duration-200 border border-gray-100">
       <div className="flex items-center gap-1.5">
-        <Switch
-          checked={isChecked}
-          onChange={handleChange}
-          className="group inline-flex h-3.5 w-6 items-center rounded-full !bg-gray-200 transition data-[checked]:!bg-[#1DA1F2]"
-        >
-          <span className="translate-x-0.5 h-2.5 w-2.5 rounded-full bg-white transition-transform duration-200 ease-in-out group-data-[checked]:translate-x-2.5 shadow-sm" />
-        </Switch>
+        <Switch checked={isChecked} onChange={handleChange} />
         <span className="text-gray-600 font-medium">{className}</span>
       </div>
       <button
